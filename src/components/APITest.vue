@@ -21,34 +21,29 @@ export default {
 
 </script>
 
-<template>
+<template class="APITest">
 
-    <div class="APITest">
+    <title>Test API</title>
 
-        <h1> Test API </h1>
-
-        <h3 class="info">名字: {{ name }} --- 年龄: {{ age }}</h3>
-        <button @click="showTel"> 查看Tel</button>
-
-        <button @click="changeName"> 修改Name</button>
-
-        <button @click="changeAge"> 修改 Age </button>
-
-
-    </div>
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>表格示例</title>
-    </head>
 
     <body>
+
+        <div>
+
+            <h3 class="info">名字: {{ name }} --- 年龄: {{ age }}</h3>
+            <button @click="showTel"> 查看Tel</button>
+
+            <button @click="changeName"> 修改Name</button>
+
+            <button @click="changeAge"> 修改 Age </button>
+
+        </div>
+
         <h2>示例表格</h2>
         <h4> -- 使用 HTML 标签 table, thead, tbody, tr, th, td </h4>
         <table>
             <thead>
-                <tr id="head">
+                <tr id="table_head">
                     <th>姓名</th>
                     <th>年龄</th>
                     <th>城市</th>
@@ -79,12 +74,13 @@ export default {
 </template>
 
 <style>
-.head {
-    line-height: 1.5;
-}
-
 .info {
     background-color: rgb(186, 238, 175);
+}
+
+button {
+    border: #0b1221;
+    padding: 5pt 10pt;
 }
 
 table {
@@ -100,13 +96,13 @@ h4 {
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid #787575;
     padding: 8px;
     text-align: left;
     color: #ee46bb;
 }
 
-.head,
+.table_head,
 th {
     color: #3b71f0;
 
