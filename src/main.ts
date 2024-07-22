@@ -19,7 +19,7 @@ const router = createRouter({
     routes,
 })
 // create App
-createApp(App).use(router).mount('#app')
+createApp(APITest).use(router).mount('#app')
 
 
 
