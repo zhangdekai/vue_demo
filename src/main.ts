@@ -9,17 +9,18 @@ import App from './App.vue'
 import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router'
 
 import APITest from './components/APITest.vue'
+import router from './router'
 
 
-const routes = [
-    { path: '/api_test', component: APITest },
-]
-const router = createRouter({
-    history: createWebHistory(),
-    routes,
-})
+// const routes = [
+//     { path: '/api_test', component: APITest},
+// ]
+// const router = createRouter({
+//     history: createWebHistory(),
+//     routes,
+// })
 // create App
-createApp(APITest).use(router).mount('#app')
+createApp(App).use(router).mount('#app')
 
 
 

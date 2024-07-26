@@ -1,15 +1,24 @@
 <script setup lang="ts">
 // JS || TS 
-import { RouterLink } from 'vue-router';
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import Person from './components/person/person.vue'
+import { RouterLink, RouterView } from 'vue-router';
+import TheWelcome from '@/components/TheWelcome.vue'
+import Person from '@/components/person/person.vue'
+import HelloWorld from '@/components/HelloWorld.vue';
+
 
 </script>
 
 <template>
 
-  <header>
+  <Transition name="slide-fade" mode="out-in">
+
+    <RouterView />
+
+  </Transition>
+
+  <!-- <Person name1="li si" age1="22" tel1="132224242"> person </Person> -->
+
+  <!-- <header>
 
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
@@ -18,6 +27,8 @@ import Person from './components/person/person.vue'
 
       <Person name1="li si" age1="22" tel1="132224242"> person </Person>
 
+
+
       <div>
         <RouterLink to="/api_test" target="_blank"> API Test </RouterLink>
 
@@ -25,13 +36,11 @@ import Person from './components/person/person.vue'
 
     </div>
 
-
-
   </header>
 
   <main>
     <TheWelcome />
-  </main>
+  </main> -->
 
 </template>
 
@@ -39,34 +48,16 @@ import Person from './components/person/person.vue'
 <style scoped>
 /*  写样式 */
 
-header {
-  line-height: 1.5;
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.slide-fade-enter-from {
+  transform: translateX(100%);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-    background-color: rgb(206, 252, 252);
-    border-radius: 10pt;
-    padding: 20pt;
-    box-shadow: 0 0 5pt;
-  }
+.slide-fade-leave-to {
+  transform: translateX(-100%);
 }
 </style>
