@@ -11,21 +11,38 @@ import HelloWorld from '@/components/HelloWorld.vue';
 
 export default defineComponent({
     name: 'Home',
+    beforeCreate() {
+        console.log('beforeCreate')
+    },
+    created() {
+        console.log('created')
+    },
+    data() {
+        return { a: 100, b: this.count }
+    },
+    // methods() {
+    //     function b() {
+    //         console.log('b func')
+    //     }
+
+    // },
     setup() {
         const router = useRouter();
 
-        const count = ref(0);
+        const count = ref(0); // 声明， 定义一个计数器
 
         const goToAbout = () => {
             router.push({ name: 'About' });
         };
-
+        const goToLifeCycle = () => {
+            router.push({ name: 'LifeCycle' });
+        };
         const increaceCount = () => {
             count.value++;
         };
 
         return {
-            goToAbout, increaceCount, count,
+            goToAbout, increaceCount, count, goToLifeCycle,
         };
     },
 });
@@ -59,11 +76,20 @@ export default defineComponent({
             </div>
 
         </div>
+        <br />
+        <br />
+
+        <br />
 
         <button @click="increaceCount">Increace Count : {{ count }}</button>
 
-        <button @click="goToAbout">Go to About</button>
 
+        <br />
+
+        <button @click="goToAbout">Go to SetUp 响应式原理</button>
+        <br />
+        <button @click="goToLifeCycle">Go to Vue3 生命周期</button>
+        <br />
         <main>
             <TheWelcome />
         </main>

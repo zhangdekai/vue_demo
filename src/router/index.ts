@@ -12,6 +12,15 @@ const routes: Array<RouteRecordRaw> = [
         path: '/about',
         name: 'About',
         component: About
+    },
+    {
+        path: '/lifeCycle',
+        name: 'LifeCycle',
+        component: () => import('@/views/LifeCycle.vue')
+    }, {
+        path: '/lifeCycleOptionAPI',
+        name: 'LifeCycleOptionAPI',
+        component: () => import('@/views/LifeCycleOptionAPI.vue')
     }
 ];
 
